@@ -29,16 +29,16 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 				}, 5000);
 			});		
 
-            // Ãµ´ÜÀ§ ÄŞ¸¶ ÇÔ¼ö
+            // ì²œë‹¨ìœ„ ì½¤ë§ˆ í•¨ìˆ˜
             function numberWithCommas(x) {
                 return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             }
-            // ¼ıÀÚ ¿Ü ¹®ÀÚ¿­ Á¦°Å ÇÔ¼ö
+            // ìˆ«ì ì™¸ ë¬¸ìì—´ ì œê±° í•¨ìˆ˜
             function numberDeleteChar(x) {
                 return x.toString().replace(/[^0-9]+/g, '');
             }
 
-			// 1. ¸¶Áö¸·°Å·¡Á¤º¸
+			// 1. ë§ˆì§€ë§‰ê±°ë˜ì •ë³´
             function bithumb_ticker(){
                 $.get('https://api.bithumb.com/public/ticker/ALL', function(data) {
                     var bithumb_btc = parseFloat(data['data']['BTC']['closing_price']);
@@ -50,7 +50,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
                 });
             }    
 
-			// 2. bithumb °Å·¡¼Ò ÆÇ/±¸¸Å µî·Ï ´ë±â ¶Ç´Â °Å·¡ Áß ³»¿ª Á¤º¸
+			// 2. bithumb ê±°ë˜ì†Œ íŒ/êµ¬ë§¤ ë“±ë¡ ëŒ€ê¸° ë˜ëŠ” ê±°ë˜ ì¤‘ ë‚´ì—­ ì •ë³´
 			function bithumb_orderbook(){
 				$.get('https://api.bithumb.com/public/orderbook/ALL', function(data) {
                     var bid_BTC_price = parseFloat(data['data']['BTC']['bids'][0]['price']);
@@ -85,7 +85,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
                 });
 			}
 
-			// 3. bithumb °Å·¡¼Ò °Å·¡ Ã¼°á ¿Ï·á ³»¿ª
+			// 3. bithumb ê±°ë˜ì†Œ ê±°ë˜ ì²´ê²° ì™„ë£Œ ë‚´ì—­
 			function bithumb_transaction_history(){
 				$.get('https://api.bithumb.com/public/transaction_history/btc', function(data) {
                     var tran_BTC_no = data['data'][0]['cont_no'];
@@ -114,7 +114,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 	</a>
 
     <a href="index.php" class="w3-bar-item w3-button w3-theme-l1">Home</a>
-	<a href="https://www.bithumb.com/u1/US127" class="w3-bar-item w3-button w3-theme-l1">BITHUMB-API</a>
+	<a href="https://apidocs.bithumb.com/" class="w3-bar-item w3-button w3-theme-l1">BITHUMB-API</a>
   </div>
 </div>
 
