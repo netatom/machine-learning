@@ -34,7 +34,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 
 			// 1. 마지막거래정보
             function bithumb_ticker(){
-                $.get('https://api.bithumb.com/public/ticker/ALL', function(data) {
+                $.get('https://api.bithumb.com/public/ticker/ALL/KRW', function(data) {
                     var bithumb_btc = parseFloat(data['data']['BTC']['closing_price']);
                     var bithumb_eth = parseFloat(data['data']['ETH']['closing_price']);
                     var bithumb_xrp = parseFloat(data['data']['XRP']['closing_price']);
@@ -46,7 +46,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 
 			// 2. bithumb 거래소 판/구매 등록 대기 또는 거래 중 내역 정보
 			function bithumb_orderbook(){
-				$.get('https://api.bithumb.com/public/orderbook/ALL', function(data) {
+				$.get('https://api.bithumb.com/public/orderbook/ALL/KRW', function(data) {
                     var bid_BTC_price = parseFloat(data['data']['BTC']['bids'][0]['price']);
                     var bid_BTC_qty = parseFloat(data['data']['BTC']['bids'][0]['quantity']);
                     var asks_BTC_price = parseFloat(data['data']['BTC']['asks'][0]['price']);
@@ -81,7 +81,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 
 			// 3. bithumb 거래소 거래 체결 완료 내역
 			function bithumb_transaction_history(){
-				$.get('https://api.bithumb.com/public/transaction_history/btc', function(data) {
+				$.get('https://api.bithumb.com/public/transaction_history/btc/KRW', function(data) {
                     var tran_BTC_no = data['data'][0]['cont_no'];
                     var tran_BTC_type = data['data'][0]['type'];
                     var tran_BTC_qty = parseFloat(data['data'][0]['units_traded']);
