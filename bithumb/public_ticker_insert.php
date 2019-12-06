@@ -36,7 +36,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 
 			// 1. 마지막거래정보
             function bithumb_ticker(){
-                $.get('https://api.bithumb.com/public/ticker/ALL', function(data) {
+                $.get('https://api.bithumb.com/public/ticker/ALL/KRW', function(data) {
                     var bithumb_btc = parseFloat(data['data']['BTC']['closing_price']);
                     var bithumb_eth = parseFloat(data['data']['ETH']['closing_price']);
                     var bithumb_xrp = parseFloat(data['data']['XRP']['closing_price']);
